@@ -6,91 +6,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        android:layout_margin="8dp"
+        android:layout_height="wrap_content">
 
-        >
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-            <TextView
-                android:id="@+id/pessoaNome"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:ellipsize="end"
-                android:fontFamily="@font/montserrat_bold"
-                android:maxLines="1"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="@tools:sample/lorem/random" />
-
-            <TextView
-                android:id="@+id/PessoaDescricao"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="@font/montserrat"
-                android:maxLines="1"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@id/pessoaNome"
-                app:layout_constraintStart_toStartOf="@id/pessoaNome"
-                app:layout_constraintTop_toBottomOf="@id/pessoaNome"
-                tools:text="@tools:sample/lorem/random" />
+        <TextView
+            android:id="@+id/pessoaNome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat_bold"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/PessoaDescricao"
+            app:layout_constraintEnd_toStartOf="@+id/pessoaImagem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nome" />
 
 
-            <TextView
-                android:id="@+id/pessoaIdade"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/montserrat"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/PessoaDescricao"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@id/PessoaDescricao"
-                app:layout_constraintTop_toBottomOf="@id/PessoaDescricao"
-                app:layout_constraintVertical_bias="1.0"
-                tools:text=" R$ 19.99" />
+        <TextView
+            android:id="@+id/PessoaDescricao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/montserrat"
+            android:maxLines="1"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/pessoaNome"
+            app:layout_constraintStart_toStartOf="@id/pessoaNome"
+            app:layout_constraintTop_toBottomOf="@id/pessoaNome"
+            tools:text="@tools:sample/lorem/random" />
 
+        <TextView
+            android:id="@+id/pessoaIdade"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/pessoaCargo"
+            app:layout_constraintEnd_toStartOf="@+id/pessoaImagem"
+            app:layout_constraintStart_toStartOf="@id/PessoaDescricao"
+            app:layout_constraintTop_toBottomOf="@id/PessoaDescricao"
+            tools:text="19" />
 
-            <TextView
-                android:id="@+id/pessoaCargo"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/montserrat"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/pessoaIdade"
-                app:layout_constraintEnd_toEndOf="@id/pessoaIdade"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pessoaIdade"
-                app:layout_constraintVertical_bias="1.0"
-                tools:text="Cargo" />
+        <TextView
+            android:id="@+id/pessoaCargo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/pessoaImagem"
+            app:layout_constraintStart_toStartOf="@id/pessoaIdade"
+            app:layout_constraintTop_toBottomOf="@id/pessoaIdade"
+            tools:text="Cargo" />
 
-
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
+        <ImageView
+            android:id="@+id/pessoaImagem"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pessoaNome"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.3"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </com.google.android.material.card.MaterialCardView>
